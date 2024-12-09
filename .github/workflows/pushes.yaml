@@ -18,6 +18,7 @@ jobs:
           echo "build_version=0.40.0" >> $GITHUB_ENV
 
   echo-version:
+    needs: calculate-semantic-version
     runs-on: ubuntu-latest
     steps:
       - name: show the version
