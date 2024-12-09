@@ -1,0 +1,29 @@
+#
+# Copyright contributors to the Galasa project
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+name: Main Build Orchestrator
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  calculate-semantic-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: calculate version
+        run: | 
+          echo "build_version=0.40.0" >> $GITHUB_ENV
+
+  echo-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show the version
+        run: |
+          echo "Version is $build_version"
+
+
+
+  
