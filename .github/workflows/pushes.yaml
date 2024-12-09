@@ -9,13 +9,16 @@ on:
   push:
     branches: [main]
 
+env: 
+  BUILD_VERSION: 0.0.0
+
 jobs:
   calculate-semantic-version:
     runs-on: ubuntu-latest
     steps:
       - name: calculate version
         run: | 
-          echo "build_version=0.40.0" >> $GITHUB_ENV
+          echo "BUILD_VERSION=0.40.0" >> $GITHUB_ENV
 
   echo-version:
     needs: calculate-semantic-version
@@ -23,7 +26,7 @@ jobs:
     steps:
       - name: show the version
         run: |
-          echo "Version is $build_version"
+          echo "Version is ${BUILD_VERSION}"
 
 
 
