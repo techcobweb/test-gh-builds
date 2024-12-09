@@ -13,20 +13,22 @@ env:
   BUILD_VERSION: 0.0.0
 
 jobs:
-  calculate-semantic-version:
+  calculate-galasa-semantic-version:
     runs-on: ubuntu-latest
+    outputs:
+      GALASA_VERSION: ${{ steps.calculate-galasa-version }}
     steps:
-      - name: calculate version
+      - name: calculate-galasa-version
         run: | 
-          echo "BUILD_VERSION=0.40.0" >> $GITHUB_ENV
+          echo "GALASA_VERSION=0.40.0" >> $GITHUB_OUTPUT
 
   echo-version:
-    needs: calculate-semantic-version
+    needs: calculate-galasa-semantic-version
     runs-on: ubuntu-latest
     steps:
       - name: show the version
         run: |
-          echo "Version is ${BUILD_VERSION}"
+          echo "Version is ${{needs.calculate-galasa-semantic-version.outputs.GALASA_VERSION}}"
 
 
 
