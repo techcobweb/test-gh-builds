@@ -14,4 +14,4 @@ jobs:
     steps:
       - id: show-the-passed-version
         run: |
-          echo "Version is ${{vars.GALASA_VERSION}}"
+          echo "Version is ${{inputs.GALASA_VERSION}}"

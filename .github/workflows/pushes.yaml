@@ -42,5 +42,5 @@ jobs:
     uses: ./.github/workflows/subflow.yaml
     secrets: inherit
     with:
-      GALASA_VERSION: {{needs.calculate-galasa-semantic-version.outputs.GALASA_VERSION}}
+      GALASA_VERSION: "${{needs.calculate-galasa-semantic-version.outputs.GALASA_VERSION}}"
   
