@@ -20,7 +20,7 @@ jobs:
     steps:
       - id: calculate-galasa-version
         run: | 
-          echo "GALASA_VERSION=${{env.GALASA_VERSION}}}}" >> $GITHUB_OUTPUT
+          echo "GALASA_VERSION=${{env.GALASA_VERSION}}" >> $GITHUB_OUTPUT
 
   echo-environmental-version:
     runs-on: ubuntu-latest
