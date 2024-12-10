@@ -17,7 +17,7 @@ jobs:
     steps:
       - id: calculate-galasa-version
         run: | 
-          echo "GALASA_VERSION='0.40.0'" >> $GITHUB_OUTPUT
+          echo "GALASA_VERSION=0.40.0" >> $GITHUB_OUTPUT
 
   echo-version:
     needs: calculate-galasa-semantic-version
