@@ -15,7 +15,7 @@ jobs:
     outputs:
       GALASA_VERSION: ${{ steps.calculate-galasa-version.outputs.GALASA_VERSION }}
     steps:
-      - name: calculate-galasa-version
+      - id: calculate-galasa-version
         run: | 
           echo "GALASA_VERSION='0.40.0'" >> $GITHUB_OUTPUT
 
@@ -23,7 +23,7 @@ jobs:
     needs: calculate-galasa-semantic-version
     runs-on: ubuntu-latest
     steps:
-      - name: show the version
+      - id: show-the-version
         run: |
           echo "Version is ${{needs.calculate-galasa-semantic-version.outputs.GALASA_VERSION}}"
 
