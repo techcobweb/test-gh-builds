@@ -32,6 +32,8 @@ jobs:
     steps:
       - id: show-the-version
         run: |
+          pwd
+          ls -l
           echo "Version is ${{needs.calculate-galasa-semantic-version.outputs.GALASA_VERSION}}"
 
   invoke-subflow:
