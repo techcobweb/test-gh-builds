@@ -39,6 +39,7 @@ jobs:
 
   invoke-subflow:
     name: Invoke the subflow
+    needs: calculate-galasa-semantic-version
     uses: ./.github/workflows/subflow.yaml
     secrets: inherit
     with:
