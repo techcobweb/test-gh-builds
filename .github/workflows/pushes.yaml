@@ -19,7 +19,7 @@ jobs:
         run: | 
           pwd
           ls -l
-          cat ./version.properties >> $GITHUB_OUTPUT
+          cat ./.github/workflows/version.properties >> $GITHUB_OUTPUT
 
   # echo-environmental-version:
   #   runs-on: ubuntu-latest
