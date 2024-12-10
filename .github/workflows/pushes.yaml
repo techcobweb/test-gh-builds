@@ -10,7 +10,7 @@ on:
     branches: [main]
 
 env:
-  GALASA_VERSION: 0.39.0
+  GALASA_VERSION: "0.39.0"
 
 jobs:
   calculate-galasa-semantic-version:
