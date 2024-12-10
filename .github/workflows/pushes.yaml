@@ -17,9 +17,7 @@ jobs:
     steps:
       - id: calculate-galasa-version
         run: | 
-          pwd
-          ls -la ./.github/workflows
-          cat ./.github/workflows/version.properties >> $GITHUB_OUTPUT
+          cat "${{ github.action_path }}/version.properties" >> $GITHUB_OUTPUT
 
   # echo-environmental-version:
   #   runs-on: ubuntu-latest
