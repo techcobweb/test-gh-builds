@@ -1,13 +1,17 @@
 name: Managers PR Build
 
 on:
-  workflow_call:
+  workflow_call:  
+    inputs:
+      GALASA_VERSION:
+        type: string
+        required: true
 
 jobs:
 
-  echo-environmental-version:
+  show-the-passed-version:
     runs-on: ubuntu-latest
     steps:
-      - id: show-the-global-envversion
+      - id: show-the-passed-version
         run: |
-          echo "Version is ${{env.GALASA_VERSION}}"
+          echo "Version is ${{vars.GALASA_VERSION}}"
