@@ -9,6 +9,9 @@ on:
   push:
     branches: [main]
 
+env:
+  GALASA_VERSION: 0.39.0
+
 jobs:
   calculate-galasa-semantic-version:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
     steps:
       - id: calculate-galasa-version
         run: | 
-          cat "version.properties" >> $GITHUB_OUTPUT
+          echo "${{env.GALASA_VERSION}}" >> $GITHUB_OUTPUT
 
   # echo-environmental-version:
   #   runs-on: ubuntu-latest
