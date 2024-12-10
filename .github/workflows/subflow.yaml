@@ -1,0 +1,13 @@
+name: Managers PR Build
+
+on:
+  workflow_call:
+
+jobs:
+
+  echo-environmental-version:
+    runs-on: ubuntu-latest
+    steps:
+      - id: show-the-global-envversion
+        run: |
+          echo "Version is ${{env.GALASA_VERSION}}"

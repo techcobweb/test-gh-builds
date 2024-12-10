@@ -37,6 +37,8 @@ jobs:
         run: |
           echo "Version is ${{needs.calculate-galasa-semantic-version.outputs.GALASA_VERSION}}"
 
-
-
+  invoke-subflow:
+    name: Invoke the subflow
+    uses: ./.github/workflows/subflow.yaml
+    secrets: inherit
   
