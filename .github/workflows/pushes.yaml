@@ -13,7 +13,7 @@ jobs:
   calculate-galasa-semantic-version:
     runs-on: ubuntu-latest
     outputs:
-      GALASA_VERSION: ${{ steps.calculate-galasa-version }}
+      GALASA_VERSION: ${{ steps.calculate-galasa-version.outputs.GALASA_VERSION }}
     steps:
       - name: calculate-galasa-version
         run: | 
