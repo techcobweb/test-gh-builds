@@ -21,7 +21,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4 
-
+        with:
+          sparse-checkout: |
+            build.properties
+          sparse-checkout-cone-mode: false
+          
       - id: calculate-galasa-version
         run: |
           cat version.properties >> $GITHUB_OUTPUT
